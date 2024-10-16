@@ -1,0 +1,70 @@
+﻿@model PizzaHouseShop.ViewModel.PizzaListViewModel
+
+<h1>Pizza House Shop</h1>
+<h3>@Model.CurrentCategory</h3>
+<br />
+<div class="row"></div>
+    @foreach (var pizza in Model.Pizzas)
+    {
+       @Html.Partial("PizzaOverviewSummary", pizza)
+    }
+</div>
+
+@*
+<div id="pizzaDiv" class="row">
+
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function() {
+            LoadMorePizzas();
+        });
+
+        $(window).scroll(function(){
+            if($(window).scrollTop() + $(window).height() >= $(document).height()){
+                LoadMorePizzas();
+            }
+        });
+
+        function LoadMorePizzas(){
+            $.ajax({
+                type: 'GET',
+                url: '/api/PizzaData',
+                dataTaype: 'json',
+                success: function (jsonData){
+                    if(jsonData == null){
+                        alert('no data returned');
+                        return;
+                    }
+
+                    $.each(jsonData, function (index, pizza){
+                        var PizzaSummarString = ' <div class="col-sm-4 col-lg-4 col-md-4"> '+
+                        ' <div class="thumbnail"> '+
+                            ' <img src="' + pizza.imageThumbnailUrl + ' " alt=""> ' +
+                                ' <div class="caption"> ' +
+                                    ' <h5 class="pull-right"> ' + pizza.price + '</h5>' +
+                                        ' <h5> ' + 
+                                            ' <a href=/Pizz/Details?Id=' + pizza.pizzaId + '>' + pizza.name + '</a>' +
+                                        ' </h5>' +
+                                        ' <p>' + pizza.shortDescription + '</p>' +
+                                    ' </div>' + 
+                                    ' <div class="addToCart">' +
+                                        ' <p class="button">' +
+                                            ' <a class="btn btn-primary" href=/ShoppingCart/AddToShoppingCart?pizza.Id=' + pizza.pizzaId + '>Add to cart</a>' +
+                                        ' </p>' +
+                                    ' </div>' +
+                                ' </div>' +
+                           ' </div>';
+                        $('#pizzaDiv').append(PizzaSummarString);
+                    });
+                },
+                error: function (ex){
+                    alert(ex);
+                }
+            });
+            return false;
+        }
+    </script>
+}
+*@

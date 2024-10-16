@@ -1,0 +1,34 @@
+﻿.Carousel-Div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.carousel-inner img {
+    max-height: 400px;
+    object-fit: cover;
+    border-radius:20px;
+}
+
+@media (max-width: 768px) {
+    .Carousel-Div {
+        width: 95%;
+    }
+
+    .carousel-inner img {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .Carousel-Div {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .carousel-inner img {
+        max-height: 250px;
+    }
+}

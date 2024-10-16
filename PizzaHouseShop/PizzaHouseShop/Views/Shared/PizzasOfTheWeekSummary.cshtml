@@ -1,0 +1,25 @@
+﻿@model Pizza
+<link rel="stylesheet" href="~/css/Shared_PizzasOfTheWeekSummary.css" />
+
+<div class="col-12 col-md-8 col-lg-6 mx-auto">
+	<div class="thumbnail">
+		<img src="@Model.ImageThumbnailUrl" alt="" />
+		<div class="caption">
+			<h5 class="pull-right">@Model.Price.ToString("c")</h5>
+			<h5>
+				<a asp-controller="Pizza"
+				   asp-action="Details"
+				   asp-route-id="@Model.PizzaId">@Model.Name</a>
+			</h5>
+			<p>@Model.ShortDescription</p>
+		</div>
+		<div class="addToCart">
+			<p class="button btn-sm">
+				<a class="btn btn-primary"
+				   asp-controller="ShoppingCart"
+				   asp-action="AddToShoppingCart"
+				   asp-route-pizzaId="@Model.PizzaId">Add to Cart</a>
+			</p>
+		</div>
+	</div>
+</div>

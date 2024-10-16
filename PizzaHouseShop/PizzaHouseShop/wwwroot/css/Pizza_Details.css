@@ -1,0 +1,139 @@
+﻿.thumbnail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+    .thumbnail img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+.caption-full {
+    width: 100%;
+    padding: 15px;
+}
+
+    .caption-full h3.pull-right {
+        font-size: 1.5rem;
+        color: #333;
+        float: right;
+    }
+
+    .caption-full h3 {
+        font-size: 1.75rem;
+        margin: 10px 0;
+        color: #444;
+    }
+
+    .caption-full h4 {
+        font-size: 1.25rem;
+        color: #777;
+    }
+
+    .caption-full p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.5;
+    }
+
+.addToCart {
+    margin-top: 15px;
+}
+
+    .addToCart .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+@media (max-width: 767px) {
+    .caption-full h3.pull-right {
+        float: none;
+        display: block;
+        font-size: 1.4rem;
+        margin-top: 10px;
+    }
+
+    .caption-full h3 {
+        font-size: 1.6rem;
+    }
+
+    .caption-full h4 {
+        font-size: 1.1rem;
+    }
+
+    .caption-full p {
+        font-size: 0.95rem;
+    }
+
+    .addToCart .btn {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .thumbnail {
+        flex-direction: row;
+        text-align: left;
+        padding: 15px;
+    }
+
+        .thumbnail img {
+            max-width: 50%;
+            margin-right: 15px;
+        }
+
+    .caption-full {
+        width: 50%;
+    }
+
+        .caption-full h3.pull-right {
+            font-size: 1.6rem;
+        }
+
+        .caption-full h3 {
+            font-size: 1.7rem;
+        }
+
+        .caption-full h4 {
+            font-size: 1.15rem;
+        }
+
+    .addToCart .btn {
+        font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .thumbnail {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 20px;
+    }
+
+    .caption-full h3.pull-right {
+        font-size: 1.8rem;
+    }
+
+    .caption-full h3 {
+        font-size: 2rem;
+    }
+
+    .caption-full h4 {
+        font-size: 1.25rem;
+    }
+
+    .addToCart .btn {
+        font-size: 1.05rem;
+    }
+}

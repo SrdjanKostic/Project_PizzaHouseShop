@@ -1,0 +1,20 @@
+﻿@model Pizza
+<link rel="stylesheet" href="~/css/Pizza_Details.css" />
+
+<div class="thumbnail">
+	<img alt="@Model.Name" src="@Model.ImageThumbnailUrl" />
+	<div class="caption-full">
+		<h3 class="pull-righ">$@Model.Price</h3>
+		<h3>@Model.Name</h3>
+		<h4>@Model.ShortDescription</h4>
+		<p>@Model.LongDescription</p>
+		<div class="addToCart">
+			<p class="button btn-sm">
+				<a class="btn btn-primary"
+				   asp-controller="ShoppingCart"
+				   asp-action="AddToShoppingCart"
+				   asp-route-pizzaId="@Model.PizzaId">Add to Cart</a>
+			</p>
+		</div>
+	</div>
+</div>
